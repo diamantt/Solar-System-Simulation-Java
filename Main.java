@@ -1,5 +1,6 @@
 import java.lang.Math;
 
+
 public class Main{
 
     public static void main(String args[])
@@ -14,10 +15,10 @@ public class Main{
         Planets[] planetsArray = new Planets[5];
         
         Sun s = new Sun(new Point(0, 0), 100, "#FFFF00");
-        Planets earth = new Planets(new Point(150,60), 45, "#0d59db");
+        Planets earth = new Planets(new Point(140,60), 45, "#0d59db");
         Planets mercury = new Planets(new Point(70,270), 15, "#d9c08f");
         Planets venus = new Planets(new Point(100,200), 25, "#d9c08f");
-        Planets mars = new Planets(new Point(200,50), 35, "#d90000");
+        Planets mars = new Planets(new Point(210,50), 35, "#d90000");
         Planets jupiter = new Planets(new Point(400,180), 50, "#d90000");
 
         planetsArray[0] = earth;
@@ -41,11 +42,11 @@ public class Main{
         AsteroidBelt[] asteroids = new AsteroidBelt[600];
 
         for(i=0; i<79; i++){
-            jupiterMoons[i] = new Moons(new Point(60 + Math.random() * 30, Math.random()), Math.random() * 5, "#D3D3D3", planetsArray[4]);
+            jupiterMoons[i] = new Moons(new Point(60 + Math.random() * 30, Math.random() * 360), Math.random() * 5, "#D3D3D3", planetsArray[4]);
             jupiterMoons[i].setRotationSpeed(Math.random() * 5);
         }
         for(i=0; i<600; i++){
-            asteroids[i] = new AsteroidBelt(new Point(250 + Math.random() * 30,Math.random()), Math.random() * 5, "#D3D3D3");
+            asteroids[i] = new AsteroidBelt(new Point(260 + Math.random() * 30,Math.random() * 360), Math.random() * 5, "#D3D3D3");
             asteroids[i].setRotationSpeed(Math.random() * 3);
         }
 
@@ -59,7 +60,7 @@ public class Main{
 
             for(i=0; i<5; i++){
                 planetsArray[i].drawObject(space);
-                planetsArray[i].moveObject();
+                
             }
             for(i=0; i<79; i++){
                 jupiterMoons[i].drawObjectAbout(space);
@@ -77,13 +78,17 @@ public class Main{
             marsMoon1.moveObject();
             marsMoon2.moveObject();
 
-            for(i=0; i<79; i++){
-                jupiterMoons[i].moveObject();
-            }
+            
+            
             for(i=0; i<600; i++){
                 asteroids[i].moveObject();
             }
-            
+            for(i=0; i<79; i++){
+                jupiterMoons[i].moveObject();
+            }
+            for(i=0; i<5; i++){
+                planetsArray[i].moveObject();
+            }
         }
         
     }
