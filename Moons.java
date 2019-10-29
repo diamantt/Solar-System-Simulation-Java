@@ -2,23 +2,21 @@ public class Moons extends Object{
 
     Planets p;
 
-    public Moons(double dis, double ang, double diam, String col){
-        distance = dis;
-        angle = ang;
+    public Moons(Point location, double diam, String col){
+        this.location = location;
         diameter = diam;
         this.col = col;
     }
 
-    public Moons(double dis, double ang, double diam, String col, Planets p){
-        distance = dis;
-        angle = ang;
+    public Moons(Point location, double diam, String col, Planets p){
+        this.location = location;
         diameter = diam;
         this.col = col;
         this.p = p;
     }
 
     public void drawObjectAbout(SolarSystem ss){
-        ss.drawSolarObjectAbout(distance,angle, diameter, col, p.getDistance(), p.getAngle());
+        ss.drawSolarObjectAbout(location.getDistance(), location.getAngle(), diameter, col, p.getDistance(), p.getAngle());
     }
     
 }

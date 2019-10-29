@@ -1,8 +1,8 @@
 public class AsteroidBelt extends Object{
 
-    public AsteroidBelt(double dis, double ang, double diam, String col){
-        distance = dis;
-        angle = ang;
+    /* constructor for */
+    public AsteroidBelt(Point location, double diam, String col){
+        this.location = location;
         diameter = diam;
         this.col = col;
     }

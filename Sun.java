@@ -1,8 +1,7 @@
 public class Sun extends Object{
 
-    public Sun(double dis, double ang, double diam, String col){
-       distance = dis;
-       angle = ang;
+    public Sun(Point location, double diam, String col){
+       this.location = location;
        diameter = diam;
        this.col = col;
 
